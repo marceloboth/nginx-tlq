@@ -8,10 +8,11 @@ worker_processes 4;
 pid /var/run/nginx.pid;
 
 events {
-  worker_connections 768;
+  worker_connections 32000;
   # multi_accept on;
 }
 
+worker_rlimit_nofile 100000;
 
 http {
 
